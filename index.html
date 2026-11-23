@@ -1,0 +1,1198 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>每日主题在线大赛爆料 - 官方视频门户,赛事爆料与创作社区</title>
+<meta name="description" content="每日主题在线大赛爆料官方网站：聚焦每日主题赛事的爆料、原创视频、创作者社区与企业动态，提供高清精品内容、赛事攻略与报名投稿入口，打造值得信赖的主题大赛内容生态。">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%231b2340'/%3E%3Cpath d='M18 20h28v8H18zM18 34h18v10H18z' fill='%23ffd23f'/%3E%3Ccircle cx='48' cy='40' r='8' fill='%23ff6b6b'/%3E%3C/svg%3E">
+<style>
+:root{
+  --dtb-ink:#161b2e;
+  --dtb-ink-2:#2a3350;
+  --dtb-paper:#f6f7fb;
+  --dtb-card:#ffffff;
+  --dtb-line:#dfe3ee;
+  --dtb-accent:#ff5a3c;
+  --dtb-accent-2:#ffb703;
+  --dtb-blue:#2f4bd8;
+  --dtb-mint:#12b886;
+  --dtb-muted:#5d6784;
+  --dtb-shadow:0 10px 30px rgba(22,27,46,.10);
+  --dtb-radius:16px;
+  --dtb-sticky:118px;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:var(--dtb-sticky)}
+body{
+  margin:0;
+  font-family:"PingFang SC","Hiragino Sans GB","Microsoft YaHei",system-ui,-apple-system,"Segoe UI",sans-serif;
+  color:var(--dtb-ink);
+  background:var(--dtb-paper);
+  line-height:1.75;
+  -webkit-font-smoothing:antialiased;
+}
+img,svg{max-width:100%}
+a{color:inherit;text-decoration:none}
+button{font-family:inherit;cursor:pointer}
+h1,h2,h3,h4{margin:0;line-height:1.3;font-weight:800;letter-spacing:.2px}
+p{margin:0}
+ul,ol{margin:0;padding:0;list-style:none}
+
+/* ---------- sticky wrap ---------- */
+.dtb-sticky-wrap{
+  position:sticky;top:0;z-index:60;
+  background:rgba(246,247,251,.94);
+  backdrop-filter:blur(12px);
+  box-shadow:0 6px 20px rgba(22,27,46,.07);
+}
+.dtb-announce{
+  background:linear-gradient(90deg,#1b2340,#2f4bd8 55%,#ff5a3c);
+  color:#fff;
+  font-size:13.5px;
+  display:flex;align-items:center;gap:12px;
+  padding:9px 20px;
+}
+.dtb-announce-tag{
+  flex:0 0 auto;
+  background:#ffd23f;color:#1b2340;
+  font-weight:800;font-size:12px;
+  border-radius:999px;padding:2px 10px;letter-spacing:.5px;
+}
+.dtb-announce-track{
+  overflow:hidden;flex:1 1 auto;white-space:nowrap;position:relative;
+}
+.dtb-announce-track span{
+  display:inline-block;
+  padding-left:100%;
+  animation:dtb-marquee 26s linear infinite;
+}
+@keyframes dtb-marquee{
+  0%{transform:translateX(0)}
+  100%{transform:translateX(-100%)}
+}
+.dtb-announce a{text-decoration:underline;text-underline-offset:3px;font-weight:700;white-space:nowrap}
+
+/* ---------- header ---------- */
+.dtb-header{
+  display:flex;align-items:center;gap:22px;
+  padding:14px 20px;
+  border-bottom:1px solid var(--dtb-line);
+}
+.dtb-brand{display:flex;align-items:center;gap:12px;min-width:0}
+.dtb-brand-mark{
+  width:46px;height:46px;border-radius:13px;flex:0 0 auto;
+  background:conic-gradient(from 40deg,#ff5a3c,#ffb703,#12b886,#2f4bd8,#ff5a3c);
+  display:grid;place-items:center;color:#fff;font-weight:900;font-size:17px;
+  box-shadow:inset 0 0 0 3px rgba(255,255,255,.85);
+}
+.dtb-brand-text{display:flex;flex-direction:column;line-height:1.2;min-width:0}
+.dtb-brand-text b{font-size:17px;letter-spacing:.5px;white-space:nowrap}
+.dtb-brand-text small{font-size:11.5px;color:var(--dtb-muted);letter-spacing:1.4px}
+.dtb-nav{display:flex;gap:4px;margin-left:auto;flex-wrap:wrap}
+.dtb-nav a{
+  padding:8px 13px;border-radius:999px;font-size:14.5px;font-weight:600;color:var(--dtb-ink-2);
+  transition:.2s;
+}
+.dtb-nav a:hover{background:#fff;color:var(--dtb-blue);box-shadow:0 4px 14px rgba(47,75,216,.14)}
+.dtb-header-tools{display:flex;align-items:center;gap:10px;margin-left:8px}
+.dtb-search{
+  display:flex;align-items:center;gap:8px;background:#fff;border:1px solid var(--dtb-line);
+  border-radius:999px;padding:6px 8px 6px 14px;min-width:210px;
+}
+.dtb-search input{
+  border:0;outline:0;background:transparent;font-size:14px;width:100%;color:var(--dtb-ink);
+}
+.dtb-search button{
+  border:0;border-radius:999px;background:var(--dtb-ink);color:#fff;font-size:13px;font-weight:700;
+  padding:6px 13px;
+}
+.dtb-search-feedback{
+  position:absolute;right:20px;top:100%;margin-top:6px;
+  background:#161b2e;color:#fff;font-size:13px;padding:8px 14px;border-radius:10px;
+  opacity:0;transform:translateY(-6px);pointer-events:none;transition:.25s;z-index:70;
+  box-shadow:0 10px 26px rgba(0,0,0,.25);max-width:280px;
+}
+.dtb-search-feedback.is-on{opacity:1;transform:translateY(0)}
+.dtb-burger{
+  display:none;width:44px;height:44px;border-radius:12px;border:1px solid var(--dtb-line);
+  background:#fff;font-size:20px;line-height:1;color:var(--dtb-ink);
+}
+.dtb-mobile-nav{display:none;padding:6px 20px 16px;background:rgba(246,247,251,.98)}
+.dtb-mobile-nav.is-open{display:block}
+.dtb-mobile-nav a{display:block;padding:11px 6px;border-bottom:1px dashed var(--dtb-line);font-weight:600}
+
+/* ---------- layout ---------- */
+.dtb-wrap{max-width:1200px;margin:0 auto;padding:0 20px}
+.dtb-section{padding:52px 0 8px}
+.dtb-section-head{display:flex;align-items:flex-end;gap:16px;flex-wrap:wrap;margin-bottom:24px}
+.dtb-kicker{
+  display:inline-flex;align-items:center;gap:7px;font-size:12.5px;font-weight:800;letter-spacing:1.6px;
+  color:var(--dtb-accent);text-transform:uppercase;
+}
+.dtb-kicker::before{content:"";width:22px;height:2px;background:var(--dtb-accent);display:block}
+.dtb-section-head h2{font-size:clamp(22px,2.6vw,30px)}
+.dtb-section-head p{color:var(--dtb-muted);font-size:14.5px;max-width:560px}
+.dtb-section-head .dtb-grow{margin-left:auto}
+
+/* ---------- hero: 4:6 大幅图文 + data bar ---------- */
+.dtb-hero{padding:34px 0 10px}
+.dtb-hero-grid{
+  display:grid;grid-template-columns:minmax(0,.82fr) minmax(0,1.18fr);gap:34px;align-items:center;
+}
+.dtb-hero-copy h1{
+  font-size:clamp(30px,4.4vw,52px);letter-spacing:-.5px;
+  background:linear-gradient(115deg,#161b2e 30%,#2f4bd8 70%,#ff5a3c);
+  -webkit-background-clip:text;background-clip:text;color:transparent;
+}
+.dtb-hero-badge{
+  display:inline-flex;align-items:center;gap:8px;background:#fff;border:1px solid var(--dtb-line);
+  border-radius:999px;padding:6px 14px;font-size:13px;font-weight:700;color:var(--dtb-ink-2);
+  box-shadow:var(--dtb-shadow);margin-bottom:16px;
+}
+.dtb-hero-badge i{width:9px;height:9px;border-radius:50%;background:var(--dtb-mint);display:block;animation:dtb-pulse 1.8s ease-in-out infinite}
+@keyframes dtb-pulse{0%,100%{box-shadow:0 0 0 0 rgba(18,184,134,.55)}50%{box-shadow:0 0 0 7px rgba(18,184,134,0)}}
+.dtb-hero-lead{font-size:15.5px;color:var(--dtb-ink-2);margin-top:14px;font-weight:600}
+.dtb-hero-intro{font-size:14.5px;color:var(--dtb-muted);margin-top:12px;text-align:justify}
+.dtb-hero-actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:22px}
+.dtb-btn{
+  display:inline-flex;align-items:center;gap:8px;border:0;border-radius:999px;
+  padding:11px 22px;font-size:14.5px;font-weight:800;transition:.22s;
+}
+.dtb-btn-primary{background:var(--dtb-accent);color:#fff;box-shadow:0 10px 24px rgba(255,90,60,.34)}
+.dtb-btn-primary:hover{transform:translateY(-2px);box-shadow:0 14px 30px rgba(255,90,60,.42)}
+.dtb-btn-ghost{background:#fff;color:var(--dtb-ink);border:1px solid var(--dtb-line);box-shadow:var(--dtb-shadow)}
+.dtb-btn-ghost:hover{border-color:var(--dtb-blue);color:var(--dtb-blue)}
+.dtb-btn-dark{background:var(--dtb-ink);color:#fff}
+.dtb-btn-dark:hover{background:var(--dtb-blue)}
+.dtb-hero-figure{position:relative}
+.dtb-hero-figure .dtb-hero-img{
+  width:100%;aspect-ratio:16/11;border-radius:22px;display:block;object-fit:cover;
+  box-shadow:0 28px 60px rgba(22,27,46,.24);
+}
+.dtb-hero-float{
+  position:absolute;left:-18px;bottom:22px;background:#fff;border-radius:16px;
+  padding:12px 16px;box-shadow:0 18px 40px rgba(22,27,46,.18);display:flex;gap:12px;align-items:center;
+  font-size:13px;font-weight:700;
+}
+.dtb-hero-float em{font-style:normal;color:var(--dtb-accent);font-size:20px}
+.dtb-stats{
+  display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;margin-top:28px;
+}
+.dtb-stat{
+  background:#fff;border:1px solid var(--dtb-line);border-radius:var(--dtb-radius);
+  padding:14px 16px;
+}
+.dtb-stat b{display:block;font-size:24px;color:var(--dtb-blue);letter-spacing:.4px}
+.dtb-stat span{font-size:12.8px;color:var(--dtb-muted);font-weight:600}
+
+/* ---------- focus / hot list ---------- */
+.dtb-focus-grid{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,1fr);gap:24px}
+.dtb-focus-card{
+  background:#fff;border-radius:20px;overflow:hidden;border:1px solid var(--dtb-line);
+  box-shadow:var(--dtb-shadow);transition:.25s;display:flex;flex-direction:column;
+}
+.dtb-focus-card:hover{transform:translateY(-4px);box-shadow:0 22px 46px rgba(22,27,46,.16)}
+.dtb-focus-card img{width:100%;aspect-ratio:16/9;object-fit:cover;display:block}
+.dtb-focus-body{padding:18px 20px 20px}
+.dtb-focus-body h3{font-size:19px;margin-bottom:8px}
+.dtb-focus-body p{font-size:14px;color:var(--dtb-muted);text-align:justify}
+.dtb-tags{display:flex;gap:7px;flex-wrap:wrap;margin:12px 0}
+.dtb-tag{
+  font-size:12px;font-weight:700;padding:3px 10px;border-radius:999px;
+  background:#eef1fb;color:var(--dtb-blue);
+}
+.dtb-tag.dtb-tag-hot{background:#fff0ec;color:var(--dtb-accent)}
+.dtb-tag.dtb-tag-mint{background:#e7f8f1;color:#0b8f69}
+.dtb-meta-row{display:flex;align-items:center;gap:14px;font-size:12.5px;color:var(--dtb-muted);flex-wrap:wrap}
+.dtb-actions{display:flex;gap:8px;margin-left:auto}
+.dtb-ico-btn{
+  border:1px solid var(--dtb-line);background:#fff;border-radius:999px;
+  padding:5px 11px;font-size:12.5px;font-weight:700;color:var(--dtb-muted);transition:.2s;
+}
+.dtb-ico-btn:hover{border-color:var(--dtb-accent);color:var(--dtb-accent)}
+.dtb-ico-btn.is-liked{background:#fff0ec;border-color:var(--dtb-accent);color:var(--dtb-accent)}
+.dtb-ico-btn.is-saved{background:#fff7e6;border-color:var(--dtb-accent-2);color:#b47a00}
+
+.dtb-textlist{display:flex;flex-direction:column;gap:10px}
+.dtb-vrow{
+  background:#fff;border:1px solid var(--dtb-line);border-radius:14px;padding:14px 16px;
+  display:grid;grid-template-columns:34px minmax(0,1fr);gap:12px;transition:.2s;
+}
+.dtb-vrow:hover{border-color:var(--dtb-blue);box-shadow:0 10px 24px rgba(47,75,216,.12)}
+.dtb-vrank{
+  width:34px;height:34px;border-radius:10px;background:#eef1fb;color:var(--dtb-blue);
+  font-weight:900;display:grid;place-items:center;font-size:14px;
+}
+.dtb-vrank.dtb-vrank-top{background:var(--dtb-accent);color:#fff}
+.dtb-vrow h4{font-size:15.2px;margin-bottom:4px}
+.dtb-vrow .dtb-vsub{font-size:13px;color:var(--dtb-muted);margin-bottom:8px}
+
+/* ---------- deep analysis ---------- */
+.dtb-analyse{
+  background:#fff;border:1px solid var(--dtb-line);border-radius:22px;padding:30px 32px;
+  box-shadow:var(--dtb-shadow);
+}
+.dtb-analyse h2{font-size:clamp(22px,2.6vw,30px);margin-bottom:8px}
+.dtb-analyse .dtb-analyse-lead{color:var(--dtb-muted);font-size:14.5px;margin-bottom:16px}
+.dtb-analyse h3{font-size:18px;margin:26px 0 8px;color:var(--dtb-ink);padding-left:12px;border-left:4px solid var(--dtb-accent);}
+.dtb-analyse p{font-size:14.6px;color:var(--dtb-ink-2);text-align:justify;margin-bottom:10px}
+.dtb-analyse .dtb-quote{
+  margin:18px 0;padding:16px 20px;border-radius:14px;background:#f6f7fb;border:1px dashed var(--dtb-line);
+  font-size:14px;color:var(--dtb-ink-2);
+}
+.dtb-fig-pair{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px;margin:18px 0 6px}
+.dtb-fig-pair figure{margin:0}
+.dtb-fig-pair img{width:100%;aspect-ratio:16/10;object-fit:cover;border-radius:14px;display:block}
+.dtb-fig-pair figcaption{font-size:12.5px;color:var(--dtb-muted);margin-top:6px}
+
+/* ---------- topic (专题) ---------- */
+.dtb-topic-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:22px}
+.dtb-topic{
+  background:#fff;border-radius:20px;border:1px solid var(--dtb-line);overflow:hidden;
+  box-shadow:var(--dtb-shadow);display:flex;flex-direction:column;
+}
+.dtb-topic-cover{position:relative}
+.dtb-topic-cover img{width:100%;aspect-ratio:21/9;object-fit:cover;display:block}
+.dtb-topic-status{
+  position:absolute;left:14px;top:14px;background:rgba(22,27,46,.82);color:#fff;
+  font-size:12px;font-weight:800;padding:4px 11px;border-radius:999px;letter-spacing:.5px;
+}
+.dtb-topic-body{padding:16px 20px 20px}
+.dtb-topic-body h3{font-size:18px;margin-bottom:6px}
+.dtb-topic-body>p{font-size:13.8px;color:var(--dtb-muted);margin-bottom:12px}
+.dtb-topic-list li{
+  font-size:13.6px;padding:8px 0 8px 18px;position:relative;color:var(--dtb-ink-2);
+  border-top:1px dashed var(--dtb-line);
+}
+.dtb-topic-list li::before{content:"";position:absolute;left:0;top:16px;width:7px;height:7px;border-radius:2px;background:var(--dtb-accent-2)}
+
+/* ---------- authors (双列简介) ---------- */
+.dtb-author-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px}
+.dtb-author{
+  background:#fff;border:1px solid var(--dtb-line);border-radius:18px;padding:18px 20px;
+  display:grid;grid-template-columns:64px minmax(0,1fr);gap:16px;transition:.22s;
+}
+.dtb-author:hover{box-shadow:0 16px 34px rgba(22,27,46,.14);transform:translateY(-3px)}
+.dtb-avatar{width:64px;height:64px;border-radius:18px;display:grid;place-items:center;font-weight:900;font-size:22px;color:#fff;flex:0 0 auto}
+.dtb-author h3{font-size:17px;display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+.dtb-author h3 span{font-size:11.5px;font-weight:800;color:var(--dtb-mint);background:#e7f8f1;border-radius:999px;padding:2px 8px}
+.dtb-author .dtb-author-field{font-size:12.8px;color:var(--dtb-accent);font-weight:800;margin:4px 0 6px;letter-spacing:.4px}
+.dtb-author p{font-size:13.4px;color:var(--dtb-muted);text-align:justify}
+.dtb-author-stats{display:flex;gap:16px;margin-top:10px;font-size:12.5px;color:var(--dtb-ink-2);font-weight:700;flex-wrap:wrap}
+.dtb-author-stats b{color:var(--dtb-blue)}
+.dtb-author-more{
+  border:0;background:#eef1fb;color:var(--dtb-blue);font-size:12.5px;font-weight:800;
+  border-radius:999px;padding:5px 12px;margin-top:10px;
+}
+.dtb-author-more:hover{background:var(--dtb-blue);color:#fff}
+
+/* ---------- comments (双列短评) ---------- */
+.dtb-comment-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
+.dtb-comment{
+  background:#fff;border:1px solid var(--dtb-line);border-radius:16px;padding:16px 18px;
+}
+.dtb-comment-head{display:flex;align-items:center;gap:10px;margin-bottom:8px}
+.dtb-comment-av{width:34px;height:34px;border-radius:50%;display:grid;place-items:center;color:#fff;font-weight:800;font-size:14px;flex:0 0 auto}
+.dtb-comment-head b{font-size:13.8px}
+.dtb-comment-head small{color:var(--dtb-muted);font-size:12px;margin-left:auto}
+.dtb-comment p{font-size:13.6px;color:var(--dtb-ink-2)}
+.dtb-stars{color:var(--dtb-accent-2);font-size:13px;letter-spacing:1px;margin-top:6px}
+
+/* ---------- brand story timeline (时间线) ---------- */
+.dtb-timeline{position:relative;padding-left:26px}
+.dtb-timeline::before{content:"";position:absolute;left:7px;top:6px;bottom:6px;width:2px;background:linear-gradient(var(--dtb-blue),var(--dtb-accent))}
+.dtb-tl-item{position:relative;padding:0 0 22px 8px}
+.dtb-tl-item::before{
+  content:"";position:absolute;left:-26px;top:6px;width:14px;height:14px;border-radius:50%;
+  background:#fff;border:3px solid var(--dtb-accent);
+}
+.dtb-tl-item h3{font-size:16.5px;margin-bottom:4px}
+.dtb-tl-item span{font-size:12.5px;color:var(--dtb-blue);font-weight:800;letter-spacing:.5px}
+.dtb-tl-item p{font-size:13.8px;color:var(--dtb-muted);margin-top:4px;text-align:justify}
+
+/* ---------- news / partner / faq ---------- */
+.dtb-twocol{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,1fr);gap:24px;align-items:start}
+.dtb-news{display:flex;flex-direction:column;gap:10px}
+.dtb-news-item{
+  background:#fff;border:1px solid var(--dtb-line);border-radius:14px;padding:14px 18px;
+  display:flex;gap:14px;align-items:flex-start;
+}
+.dtb-news-item time{font-size:12.8px;color:var(--dtb-accent);font-weight:800;flex:0 0 auto;padding-top:2px}
+.dtb-news-item h3{font-size:15px;margin-bottom:3px}
+.dtb-news-item p{font-size:13.2px;color:var(--dtb-muted)}
+.dtb-partner-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+.dtb-partner{
+  background:#fff;border:1px solid var(--dtb-line);border-radius:14px;padding:14px;
+  display:flex;align-items:center;gap:12px;
+}
+.dtb-partner-logo{width:40px;height:40px;border-radius:11px;display:grid;place-items:center;color:#fff;font-weight:900;flex:0 0 auto}
+.dtb-partner b{font-size:14px;display:block}
+.dtb-partner small{font-size:12px;color:var(--dtb-muted)}
+.dtb-faq{display:flex;flex-direction:column;gap:10px;margin-top:6px}
+.dtb-faq details{
+  background:#fff;border:1px solid var(--dtb-line);border-radius:14px;padding:0 18px;
+}
+.dtb-faq summary{
+  cursor:pointer;font-weight:800;font-size:14.8px;padding:14px 0;list-style:none;
+  display:flex;align-items:center;gap:10px;
+}
+.dtb-faq summary::-webkit-details-marker{display:none}
+.dtb-faq summary::before{content:"＋";color:var(--dtb-accent);font-weight:900}
+.dtb-faq details[open] summary::before{content:"－"}
+.dtb-faq details p{font-size:13.6px;color:var(--dtb-muted);padding:0 0 14px 24px;text-align:justify;border-top:1px dashed var(--dtb-line);padding-top:12px}
+
+/* ---------- inspiration strip ---------- */
+.dtb-inspire{
+  background:linear-gradient(120deg,#161b2e,#2a3350 60%,#2f4bd8);
+  border-radius:22px;padding:30px 32px;color:#fff;display:grid;gap:20px;
+  grid-template-columns:minmax(0,1fr) minmax(0,1fr);align-items:center;
+}
+.dtb-inspire h2{font-size:clamp(20px,2.4vw,26px);margin-bottom:8px;color:#ffd23f}
+.dtb-inspire p{font-size:14px;color:#c9d1ec;text-align:justify}
+.dtb-inspire-tips li{
+  font-size:13.8px;padding:10px 0;border-bottom:1px dashed rgba(255,255,255,.16);display:flex;gap:10px;
+}
+.dtb-inspire-tips li b{color:#ffd23f;flex:0 0 auto}
+
+/* ---------- footer ---------- */
+.dtb-footer{background:#161b2e;color:#c9d1ec;margin-top:60px;padding:44px 0 26px}
+.dtb-footer-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:28px}
+.dtb-footer h3{color:#fff;font-size:15px;margin-bottom:12px;letter-spacing:.5px}
+.dtb-footer p,.dtb-footer a,.dtb-footer li{font-size:13.4px;color:#aab4d4;line-height:1.9}
+.dtb-footer a:hover{color:#ffd23f}
+.dtb-footer .dtb-brand-text b{color:#fff}
+.dtb-footer-bottom{
+  border-top:1px solid rgba(255,255,255,.1);margin-top:30px;padding-top:18px;
+  display:flex;gap:14px;flex-wrap:wrap;justify-content:space-between;font-size:12.6px;color:#8b96ba;
+}
+.dtb-socials{display:flex;gap:10px;margin-top:12px}
+.dtb-socials button{
+  width:36px;height:36px;border-radius:10px;border:1px solid rgba(255,255,255,.18);
+  background:transparent;color:#dbe2f7;font-size:12.5px;font-weight:700;
+}
+.dtb-socials button:hover{background:var(--dtb-accent);border-color:var(--dtb-accent);color:#fff}
+
+/* ---------- toast & modal & backtop ---------- */
+.dtb-toast{
+  position:fixed;left:50%;bottom:34px;transform:translate(-50%,20px);
+  background:#161b2e;color:#fff;padding:11px 20px;border-radius:999px;font-size:13.8px;font-weight:700;
+  opacity:0;pointer-events:none;transition:.28s;z-index:120;box-shadow:0 14px 34px rgba(0,0,0,.3);
+}
+.dtb-toast.is-on{opacity:1;transform:translate(-50%,0)}
+.dtb-modal{
+  position:fixed;inset:0;z-index:130;display:none;place-items:center;padding:20px;
+  background:rgba(16,20,36,.6);backdrop-filter:blur(4px);
+}
+.dtb-modal.is-on{display:grid}
+.dtb-modal-box{
+  background:#fff;border-radius:20px;max-width:520px;width:100%;padding:26px 28px;
+  max-height:84vh;overflow:auto;box-shadow:0 30px 70px rgba(0,0,0,.35);
+}
+.dtb-modal-box h3{font-size:19px;margin-bottom:10px}
+.dtb-modal-box p{font-size:14px;color:var(--dtb-muted);margin-bottom:12px;text-align:justify}
+.dtb-modal-box textarea{
+  width:100%;min-height:88px;border:1px solid var(--dtb-line);border-radius:12px;padding:10px 12px;
+  font-size:14px;font-family:inherit;outline:0;resize:vertical;
+}
+.dtb-modal-box textarea:focus{border-color:var(--dtb-blue)}
+.dtb-modal-close{
+  float:right;border:0;background:#f0f2f9;border-radius:50%;width:32px;height:32px;font-size:16px;color:var(--dtb-ink);
+}
+.dtb-modal-actions{display:flex;gap:10px;justify-content:flex-end;margin-top:16px}
+.dtb-backtop{
+  position:fixed;right:22px;bottom:26px;width:46px;height:46px;border-radius:50%;
+  border:0;background:var(--dtb-accent);color:#fff;font-size:18px;font-weight:900;
+  box-shadow:0 12px 26px rgba(255,90,60,.4);opacity:0;pointer-events:none;transition:.3s;z-index:100;
+}
+.dtb-backtop.is-on{opacity:1;pointer-events:auto}
+
+/* ---------- responsive ---------- */
+@media (max-width:1020px){
+  .dtb-nav{display:none}
+  .dtb-burger{display:grid;place-items:center}
+  .dtb-search{min-width:0;width:180px}
+  .dtb-hero-grid,.dtb-focus-grid,.dtb-topic-grid,.dtb-twocol,.dtb-inspire{grid-template-columns:minmax(0,1fr)}
+  .dtb-author-grid,.dtb-comment-grid,.dtb-fig-pair{grid-template-columns:minmax(0,1fr)}
+  .dtb-footer-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .dtb-hero-float{left:12px;bottom:12px}
+}
+@media (max-width:640px){
+  .dtb-announce{font-size:12.4px;padding:8px 14px}
+  .dtb-header{flex-wrap:wrap;gap:12px;padding:12px 14px}
+  .dtb-header-tools{margin-left:auto}
+  .dtb-search{width:auto;flex:1 1 140px}
+  .dtb-stats{grid-template-columns:repeat(3,minmax(0,1fr));gap:8px}
+  .dtb-stat b{font-size:19px}
+  .dtb-analyse{padding:22px 18px}
+  .dtb-author{grid-template-columns:52px minmax(0,1fr);padding:16px}
+  .dtb-avatar{width:52px;height:52px;font-size:18px;border-radius:14px}
+  .dtb-footer-grid{grid-template-columns:minmax(0,1fr)}
+  .dtb-partner-grid{grid-template-columns:minmax(0,1fr)}
+  .dtb-inspire{padding:22px 18px}
+  :root{--dtb-sticky:104px}
+}
+</style>
+<script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+</head>
+<body>
+
+<!-- ===== sticky: 公告条 + 页头 ===== -->
+<div class="dtb-sticky-wrap">
+  <div class="dtb-announce" id="dtb-announce">
+    <span class="dtb-announce-tag">官方发布</span>
+    <div class="dtb-announce-track">
+      <span>第 118 期「深夜厨房」主题赛报名通道开启 · 新增 6 位创作者入驻 · 「城市清晨」投稿截止 11 月 30 日 · 第 117 期获奖名单已公示 · 高清正版素材库新增 240 条 · <a href="#dtb-topic">查看本期专题企划</a></span>
+    </div>
+  </div>
+
+  <header class="dtb-header">
+    <div class="dtb-brand">
+      <div class="dtb-brand-mark" aria-hidden="true">每</div>
+      <div class="dtb-brand-text">
+        <b>每日主题在线大赛</b>
+        <small>DAILY THEME ONLINE CUP</small>
+      </div>
+    </div>
+    <nav class="dtb-nav" aria-label="主导航">
+      <a href="#dtb-hero">首页</a>
+      <a href="#dtb-focus">今日焦点</a>
+      <a href="#dtb-analyse">大赛解析</a>
+      <a href="#dtb-topic">专题企划</a>
+      <a href="#dtb-author">创作者</a>
+      <a href="#dtb-comment">口碑评价</a>
+      <a href="#dtb-news">企业动态</a>
+      <a href="#dtb-faq">帮助</a>
+    </nav>
+    <div class="dtb-header-tools">
+      <div class="dtb-search">
+        <input id="dtb-search-input" type="search" placeholder="搜索主题赛 / 爆料 / 创作者" aria-label="站内搜索">
+        <button type="button" id="dtb-search-btn">搜索</button>
+      </div>
+      <button class="dtb-burger" id="dtb-burger" type="button" aria-label="展开导航" aria-expanded="false">☰</button>
+    </div>
+    <div class="dtb-search-feedback" id="dtb-search-feedback" role="status" aria-live="polite"></div>
+  </header>
+  <nav class="dtb-mobile-nav" id="dtb-mobile-nav" aria-label="移动端导航">
+    <a href="#dtb-hero">首页</a>
+    <a href="#dtb-focus">今日焦点</a>
+    <a href="#dtb-analyse">大赛解析</a>
+    <a href="#dtb-topic">专题企划</a>
+    <a href="#dtb-author">创作者</a>
+    <a href="#dtb-comment">口碑评价</a>
+    <a href="#dtb-news">企业动态</a>
+    <a href="#dtb-faq">帮助</a>
+  </nav>
+</div>
+
+<main class="dtb-wrap">
+
+  <!-- ===== 首屏 ===== -->
+  <section class="dtb-hero" id="dtb-hero">
+    <div class="dtb-hero-grid">
+      <div class="dtb-hero-copy">
+        <span class="dtb-hero-badge"><i></i>官方网站 · 每日更新赛事爆料</span>
+        <h1>每日主题在线大赛爆料</h1>
+        <p class="dtb-hero-lead">一个以「每日主题」为核心的原创视频赛事品牌，把爆料、创作与社区评审放在同一条时间线上。</p>
+        <p class="dtb-hero-intro">作为深耕主题赛事领域的视频品牌，我们持续运营每日主题在线大赛，为企业、创作者与观众搭建高品质内容生态：每个比赛日发布一个主题，创作者上传原创短片，社区投票与专业评审同步进行。从选题爆料、拍摄攻略到获奖回访，我们坚持正版、高清、可追溯的内容标准，让每一份创意都被真实看见。这里是企业官方信息与社区活力的共同入口，也是你了解赛事、报名参与、下载素材与复盘学习的首选平台。</p>
+        <div class="dtb-hero-actions">
+          <a class="dtb-btn dtb-btn-primary" href="#dtb-focus">看今日爆料 →</a>
+          <a class="dtb-btn dtb-btn-ghost" href="#dtb-topic">本期专题</a>
+          <button class="dtb-btn dtb-btn-dark" type="button" data-dtb-open="submit">我要投稿</button>
+        </div>
+        <div class="dtb-stats">
+          <div class="dtb-stat"><b>1,268</b><span>已举办主题赛期数</span></div>
+          <div class="dtb-stat"><b>42.6万</b><span>累计原创投稿作品</span></div>
+          <div class="dtb-stat"><b>9.7<span style="font-size:14px">/10</span></b><span>社区口碑综合评分</span></div>
+        </div>
+      </div>
+      <figure class="dtb-hero-figure" style="margin:0">
+        <img class="dtb-hero-img" alt="每日主题在线大赛主视觉：深夜厨房主题的暖橙灯光下创作者架机拍摄" src="data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 960 660'%3E%3Cdefs%3E%3ClinearGradient id='g1' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%231b2340'/%3E%3Cstop offset='0.55' stop-color='%23363f6b'/%3E%3Cstop offset='1' stop-color='%23ff5a3c'/%3E%3C/linearGradient%3E%3CradialGradient id='g2' cx='0.3' cy='0.25' r='0.7'%3E%3Cstop offset='0' stop-color='%23ffd23f' stop-opacity='0.95'/%3E%3Cstop offset='1' stop-color='%23ffd23f' stop-opacity='0'/%3E%3C/radialGradient%3E%3C/defs%3E%3Crect width='960' height='660' fill='url(%23g1)'/%3E%3Ccircle cx='290' cy='185' r='230' fill='url(%23g2)'/%3E%3Crect x='88' y='300' width='420' height='250' rx='18' fill='%23f6f7fb' opacity='0.94'/%3E%3Crect x='118' y='330' width='160' height='14' rx='7' fill='%231b2340' opacity='0.85'/%3E%3Crect x='118' y='360' width='300' height='10' rx='5' fill='%235d6784' opacity='0.55'/%3E%3Crect x='118' y='384' width='250' height='10' rx='5' fill='%235d6784' opacity='0.4'/%3E%3Crect x='118' y='430' width='120' height='78' rx='12' fill='%23ff5a3c'/%3E%3Crect x='256' y='430' width='120' height='78' rx='12' fill='%232f4bd8'/%3E%3Crect x='394' y='430' width='86' height='78' rx='12' fill='%2312b886'/%3E%3Cpath d='M600 170l210 120-210 120z' fill='%23ffffff' opacity='0.16'/%3E%3Ccircle cx='705' cy='290' r='96' fill='none' stroke='%23ffd23f' stroke-width='6' opacity='0.8'/%3E%3Cpath d='M700 250l14 30 33 4-24 23 6 33-29-16-29 16 6-33-24-23 33-4z' fill='%23ffd23f'/%3E%3Crect x='540' y='452' width='330' height='16' rx='8' fill='%23ffffff' opacity='0.2'/%3E%3Crect x='540' y='486' width='250' height='12' rx='6' fill='%23ffffff' opacity='0.14'/%3E%3Crect x='540' y='514' width='290' height='12' rx='6' fill='%23ffffff' opacity='0.1'/%3E%3C/svg%3E">
+        <div class="dtb-hero-float"><em>118</em><div>本期主题赛<br><span style="color:#5d6784;font-weight:600">「深夜厨房」进行中</span></div></div>
+      </figure>
+    </div>
+  </section>
+
+  <!-- ===== 焦点 + 文字列表 ===== -->
+  <section class="dtb-section" id="dtb-focus">
+    <div class="dtb-section-head">
+      <span class="dtb-kicker">Today's Focus</span>
+      <h2>今日主题赛爆料：从选题到成片的一条线</h2>
+      <p>每日主题在线大赛的爆料不是八卦式的猜测，而是把选题逻辑、拍摄条件与评审偏好摊开给所有创作者看。今天的重点推荐，全部来自官方发布与创作者一手记录。</p>
+    </div>
+
+    <div class="dtb-focus-grid">
+      <article class="dtb-focus-card">
+        <img alt="深夜厨房主题赛重点作品：创作者在灶台前用单灯拍摄成品特写" src="data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 800 450'%3E%3Cdefs%3E%3ClinearGradient id='k1' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%23ff8a3c'/%3E%3Cstop offset='1' stop-color='%237a2e12'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='800' height='450' fill='url(%23k1)'/%3E%3Ccircle cx='600' cy='120' r='120' fill='%23ffd23f' opacity='0.55'/%3E%3Crect x='60' y='250' width='360' height='140' rx='14' fill='%23241a14' opacity='0.82'/%3E%3Crect x='92' y='282' width='120' height='12' rx='6' fill='%23ffd23f' opacity='0.9'/%3E%3Crect x='92' y='308' width='230' height='9' rx='4' fill='%23fff' opacity='0.45'/%3E%3Crect x='92' y='328' width='180' height='9' rx='4' fill='%23fff' opacity='0.3'/%3E%3Ccircle cx='540' cy='300' r='86' fill='none' stroke='%23fff' stroke-width='8' opacity='0.7'/%3E%3Ccircle cx='540' cy='300' r='18' fill='%23fff' opacity='0.85'/%3E%3Crect x='470' y='400' width='260' height='10' rx='5' fill='%23fff' opacity='0.35'/%3E%3C/svg%3E">
+        <div class="dtb-focus-body">
+          <div class="dtb-tags">
+            <span class="dtb-tag dtb-tag-hot">重点爆料</span>
+            <span class="dtb-tag">深夜厨房</span>
+            <span class="dtb-tag dtb-tag-mint">评审视角</span>
+          </div>
+          <h3>一盏台灯拍出「深夜厨房」：评审最想看到的三个细节</h3>
+          <p>官方评审组在赛前说明会上透露，本期更看重「真实的生活痕迹」而非精致摆盘：灶台的油渍、被切了一半的葱、镜头外的手写便签，都可能成为加分项。创作者@阿燎 用一盏 30 元台灯完成了整支短片，成为今日爆料中被转发最多的案例。</p>
+          <div class="dtb-meta-row">
+            <span>作者：阿燎</span><span>播放 18.6万</span><span>点赞 1.2万</span><span>收藏 4,860</span>
+            <div class="dtb-actions">
+              <button class="dtb-ico-btn" type="button" data-dtb-like>♡ 点赞</button>
+              <button class="dtb-ico-btn" type="button" data-dtb-save>☆ 收藏</button>
+              <button class="dtb-ico-btn" type="button" data-dtb-open="share">分享</button>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <div class="dtb-textlist">
+        <div class="dtb-vrow">
+          <div class="dtb-vrank dtb-vrank-top">01</div>
+          <div>
+            <h4>爆料：第 118 期主题「深夜厨房」的隐藏加分项是「声音」</h4>
+            <p class="dtb-vsub">油锅声、刀落案板声、冰箱门吸合声——评审组表示声音设计占 15 分。视频条目含完整评分表拆解。</p>
+            <div class="dtb-meta-row"><span class="dtb-tag">大赛爆料</span><span>@赛事观察室</span><span>播放 9.8万</span><span>点赞 6,204</span>
+              <div class="dtb-actions"><button class="dtb-ico-btn" type="button" data-dtb-like>♡ 点赞</button><button class="dtb-ico-btn" type="button" data-dtb-save>☆ 收藏</button></div>
+            </div>
+          </div>
+        </div>
+        <div class="dtb-vrow">
+          <div class="dtb-vrank">02</div>
+          <div>
+            <h4>十分钟拍完一条主题赛作品的五步流程</h4>
+            <p class="dtb-vsub">从选题卡片到导出上传，@剪辑小满 把每日主题赛的创作拆成可复制的流程，适合第一次报名的新人。</p>
+            <div class="dtb-meta-row"><span class="dtb-tag">教程干货</span><span>@剪辑小满</span><span>播放 7.4万</span><span>点赞 5,118</span>
+              <div class="dtb-actions"><button class="dtb-ico-btn" type="button" data-dtb-like>♡ 点赞</button><button class="dtb-ico-btn" type="button" data-dtb-save>☆ 收藏</button></div>
+            </div>
+          </div>
+        </div>
+        <div class="dtb-vrow">
+          <div class="dtb-vrank">03</div>
+          <div>
+            <h4>一座城市的清晨：把通勤路拍成三分钟短片</h4>
+            <p class="dtb-vsub">城市探索方向的口碑作品，作者用固定机位记录同一路口的 72 分钟，被社区称为「最安静的一次爆料」。</p>
+            <div class="dtb-meta-row"><span class="dtb-tag dtb-tag-mint">城市探索</span><span>@晨光档案</span><span>播放 12.3万</span><span>点赞 8,902</span>
+              <div class="dtb-actions"><button class="dtb-ico-btn" type="button" data-dtb-like>♡ 点赞</button><button class="dtb-ico-btn" type="button" data-dtb-save>☆ 收藏</button></div>
+            </div>
+          </div>
+        </div>
+        <div class="dtb-vrow">
+          <div class="dtb-vrank">04</div>
+          <div>
+            <h4>对话三位连续参赛者：他们如何在一天内完成创意闭环</h4>
+            <p class="dtb-vsub">人物访谈方向，聊选题焦虑、设备限制与社区投票的真实影响，含 3 段未公开录音整理。</p>
+            <div class="dtb-meta-row"><span class="dtb-tag">人物访谈</span><span>@赛事观察室</span><span>播放 5.6万</span><span>点赞 3,470</span>
+              <div class="dtb-actions"><button class="dtb-ico-btn" type="button" data-dtb-like>♡ 点赞</button><button class="dtb-ico-btn" type="button" data-dtb-save>☆ 收藏</button></div>
+            </div>
+          </div>
+        </div>
+        <div class="dtb-vrow">
+          <div class="dtb-vrank">05</div>
+          <div>
+            <h4>参赛设备清单：预算 500 元能拍到什么程度</h4>
+            <p class="dtb-vsub">深度测评方向，横向对比手机、卡片机与二手微单在低照度厨房场景下的表现，结论出人意料。</p>
+            <div class="dtb-meta-row"><span class="dtb-tag">深度测评</span><span>@器材自习室</span><span>播放 4.9万</span><span>点赞 2,980</span>
+              <div class="dtb-actions"><button class="dtb-ico-btn" type="button" data-dtb-like>♡ 点赞</button><button class="dtb-ico-btn" type="button" data-dtb-save>☆ 收藏</button></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== 大赛解析（800+字） ===== -->
+  <section class="dtb-section" id="dtb-analyse">
+    <div class="dtb-analyse">
+      <span class="dtb-kicker">Deep Dive</span>
+      <h2>大赛解析：每日主题在线大赛到底在比什么</h2>
+      <p class="dtb-analyse-lead">很多人第一次听到「每日主题在线大赛」，会把它理解成一个日更的短视频挑战。真正参与过几期之后就会发现，它更接近一套持续运营的内容生产机制：固定的主题节奏、公开的评审维度、可追溯的作品档案，以及一个愿意反复回来的创作者社区。</p>
+
+      <h3>一、主题机制：一天一题，如何避免同质化</h3>
+      <p>每日主题在线大赛的核心是「一天一题」。主题由官方选题组在前一周确定，覆盖日常记录、经验分享、城市探索、人物访谈、艺术美学等方向，并在公告条与专题页同步公布。表面上看，一天一题会带来巨大的同质化压力，但实际运行中，主题被设计成「宽口径 + 窄切口」：宽口径保证所有人都有话可说，窄切口则通过附加条件制造差异。例如「深夜厨房」这一题，附加条件是「必须出现一次真实的家常动作」，于是有人拍煮面，有人拍洗碗，有人拍深夜给家人留饭，切口自然分开。</p>
+      <p>为了避免连续两期主题过于相似，官方选题组会维护一份题材使用记录，同一题材连续出现不超过两次。这条规则对创作者的意义很直接：你不需要每次都押注热门方向，稳定输出反而更容易被社区记住。对品牌方来说，稳定的主题节奏意味着可预期的内容供给，这也是我们持续运营与合作的基础。</p>
+
+      <h3>二、评审维度：公开的分数比神秘的奖杯更值钱</h3>
+      <p>每期大赛采用「社区投票 + 专业评审」双轨制。社区投票占比 40%，专业评审占比 60%，评审维度公开为五项：主题切合度、创意完成度、影像质量、声音设计、真实感。每项 20 分，合计 100 分。我们坚持把评分表放出来，是因为爆料的意义不在于制造悬念，而在于让下一位创作者知道往哪里用力。</p>
+      <p>从近二十期的数据看，最容易拉开差距的是「真实感」与「声音设计」两项。大量作品在画面上已经相当成熟，却在声音上草草了事：环境音被音乐完全盖住，动作声与画面不同步，采访段落没有做降噪。评审组在复盘会上多次强调，一支三分钟的短片，声音至少要占到三分之一的注意力预算。这条经验后来被整理成攻略，放进创作灵感模块，供报名者下载。</p>
+      <div class="dtb-quote">「我们不缺漂亮画面，缺的是让人相信这件事真的发生过的细节。」——赛事评审组在 117 期复盘会上的原话，已被社区反复引用。</div>
+
+      <h3>三、内容生态：创作者、观众与企业如何各取所需</h3>
+      <p>每日主题在线大赛的内容生态由三方构成。创作者获得的是一个低门槛、高频次的练习场：不用等设备升级，不用等长假，今天报名今天就能拍。观众获得的是一个稳定更新的精品内容入口：每天都有新主题、新作品、新爆料，评论区本身就是二次内容。企业与合作品牌获得的则是可衡量的曝光与真实的用户反馈：哪类主题互动最高、哪种表达最容易被收藏，数据都在后台可查。</p>
+      <p>为了让生态持续运转，我们做了三件事。第一，建立正版高清素材库，创作者可免费下载音效、转场与字幕模板，减少重复劳动。第二，设立新人榜与口碑榜，让第一次参赛的作品也有被看见的机会。第三，把企业动态、FAQ 与投稿入口放在显眼位置，降低参与门槛。这些动作看起来琐碎，但正是它们让一个比赛变成了一个可以长期停留的社区。</p>
+      <div class="dtb-fig-pair">
+        <figure>
+          <img alt="大赛评审维度示意图：五项评分维度的彩色分层柱状结构" src="data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 640 400'%3E%3Crect width='640' height='400' fill='%23eef1fb'/%3E%3Crect x='60' y='60' width='60' height='260' rx='8' fill='%232f4bd8'/%3E%3Crect x='150' y='110' width='60' height='210' rx='8' fill='%23ff5a3c'/%3E%3Crect x='240' y='150' width='60' height='170' rx='8' fill='%23ffb703'/%3E%3Crect x='330' y='90' width='60' height='230' rx='8' fill='%2312b886'/%3E%3Crect x='420' y='180' width='60' height='140' rx='8' fill='%235d6784'/%3E%3Crect x='60' y='340' width='420' height='8' rx='4' fill='%231b2340' opacity='0.25'/%3E%3Crect x='520' y='120' width='80' height='80' rx='40' fill='%231b2340'/%3E%3Ctext x='560' y='172' font-family='sans-serif' font-size='34' fill='%23ffd23f' text-anchor='middle'%3E100%3C/text%3E%3C/svg%3E">
+          <figcaption>五项评审维度的权重示意：真实感与声音设计是近年拉开差距的关键。</figcaption>
+        </figure>
+        <figure>
+          <img alt="每日主题赛内容生态循环示意图：创作者、观众与品牌三方的蓝色环形结构" src="data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 640 400'%3E%3Crect width='640' height='400' fill='%231b2340'/%3E%3Ccircle cx='320' cy='200' r='130' fill='none' stroke='%232f4bd8' stroke-width='26' opacity='0.55'/%3E%3Ccircle cx='320' cy='200' r='130' fill='none' stroke='%23ff5a3c' stroke-width='26' stroke-dasharray='160 660' stroke-linecap='round'/%3E%3Ccircle cx='320' cy='200' r='130' fill='none' stroke='%2312b886' stroke-width='26' stroke-dasharray='120 700' stroke-dashoffset='-220' stroke-linecap='round'/%3E%3Ccircle cx='320' cy='200' r='58' fill='%23ffd23f'/%3E%3Ctext x='320' y='196' font-family='sans-serif' font-size='20' font-weight='bold' fill='%231b2340' text-anchor='middle'%3E主题赛%3C/text%3E%3Ctext x='320' y='222' font-family='sans-serif' font-size='13' fill='%231b2340' text-anchor='middle'%3E内容生态%3C/text%3E%3C/svg%3E">
+          <figcaption>创作者产出、观众反馈、品牌合作形成的三方循环。</figcaption>
+        </figure>
+      </div>
+
+      <h3>四、参与路径与长期价值</h3>
+      <p>对普通用户来说，参与路径只有四步：看公告条确认当期主题，下载素材包，上传作品，等待社区投票与评审反馈。整个流程在网页端即可完成，不需要额外安装工具。对希望深度参与的创作者，我们开放了作品档案页与数据看板，可以查看自己在同类主题中的排名变化，也能看到每条作品的完播率与收藏率。</p>
+      <p>长期来看，每日主题在线大赛的价值不在于某一期的奖金，而在于它提供了一条可持续的成长曲线。一位连续参赛 40 期的创作者告诉我们，他最初只是为了练手，后来逐渐形成了自己的视觉语言，如今已经能接到品牌定制项目。这样的故事在社区里并不罕见。我们把这称为「陪伴式成长」：品牌提供稳定的赛制与资源，创作者提供持续的作品，社区提供真实的反馈，三方共同把一件小事做长。</p>
+      <p>如果你正在寻找一个可以反复练习、被真实看见、并且有明确规则可依的创作场域，每日主题在线大赛会是一个值得信赖的起点。我们也会继续把爆料、攻略与复盘公开出来，让每一次报名都不是盲盒。</p>
+    </div>
+  </section>
+
+  <!-- ===== 专题企划 ===== -->
+  <section class="dtb-section" id="dtb-topic">
+    <div class="dtb-section-head">
+      <span class="dtb-kicker">Special Program</span>
+      <h2>专题企划：把零散的主题赛串成一条线</h2>
+      <p>单个主题赛像一天的天气，专题企划则是气候。我们把主题相近的多期内容整理成可连续观看的专题，方便新观众补课，也方便创作者研究同一题材的多种拍法。</p>
+    </div>
+    <div class="dtb-topic-grid">
+      <article class="dtb-topic">
+        <div class="dtb-topic-cover">
+          <img alt="专题企划「一日三餐」的封面：三个并排的厨房窗口与暖色餐盘" src="data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 840 360'%3E%3Crect width='840' height='360' fill='%23fff3e6'/%3E%3Crect x='40' y='60' width='220' height='240' rx='14' fill='%23ff5a3c' opacity='0.85'/%3E%3Crect x='310' y='60' width='220' height='240' rx='14' fill='%23ffb703' opacity='0.9'/%3E%3Crect x='580' y='60' width='220' height='240' rx='14' fill='%2312b886' opacity='0.85'/%3E%3Ccircle cx='150' cy='170' r='54' fill='%23fff' opacity='0.85'/%3E%3Ccircle cx='420' cy='170' r='54' fill='%23fff' opacity='0.85'/%3E%3Ccircle cx='690' cy='170' r='54' fill='%23fff' opacity='0.85'/%3E%3Crect x='90' y='250' width='120' height='12' rx='6' fill='%23fff' opacity='0.7'/%3E%3Crect x='360' y='250' width='120' height='12' rx='6' fill='%23fff' opacity='0.7'/%3E%3Crect x='630' y='250' width='120' height='12' rx='6' fill='%23fff' opacity='0.7'/%3E%3C/svg%3E">
+          <span class="dtb-topic-status">更新中 · 已上线 9 期</span>
+        </div>
+        <div class="dtb-topic-body">
+          <h3>专题｜一日三餐的十二种拍法</h3>
+          <p>围绕饮食主题赛的长期企划，从早餐的窗光到夜宵的台灯，收录不同预算、不同家庭结构下的真实记录。</p>
+          <ul class="dtb-topic-list">
+            <li>清晨六点的粥：用自然光拍出蒸汽的层次</li>
+            <li>一个人吃饭也要摆盘吗？三位创作者的答案</li>
+            <li>夜宵摊的十分钟：手持拍摄的稳定技巧</li>
+          </ul>
+        </div>
+      </article>
+      <article class="dtb-topic">
+        <div class="dtb-topic-cover">
+          <img alt="专题企划「城市清晨」的封面：蓝灰色城市天际线与一枚橙色太阳" src="data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 840 360'%3E%3Crect width='840' height='360' fill='%23dbe4f5'/%3E%3Ccircle cx='660' cy='96' r='54' fill='%23ff8a3c'/%3E%3Crect x='60' y='180' width='90' height='180' fill='%23364a72'/%3E%3Crect x='170' y='140' width='70' height='220' fill='%232f4bd8' opacity='0.8'/%3E%3Crect x='260' y='210' width='110' height='150' fill='%23364a72' opacity='0.85'/%3E%3Crect x='390' y='120' width='80' height='240' fill='%231b2340' opacity='0.8'/%3E%3Crect x='490' y='190' width='130' height='170' fill='%232f4bd8' opacity='0.6'/%3E%3Crect x='640' y='160' width='90' height='200' fill='%23364a72' opacity='0.9'/%3E%3Crect x='0' y='330' width='840' height='30' fill='%231b2340' opacity='0.25'/%3E%3C/svg%3E">
+          <span class="dtb-topic-status">征稿中 · 截止 11 月 30 日</span>
+        </div>
+        <div class="dtb-topic-body">
+          <h3>专题｜城市清晨：在通勤开始之前</h3>
+          <p>面向城市探索方向的专题征集，鼓励用固定机位、长镜头与环境音记录一座城市苏醒的过程。</p>
+          <ul class="dtb-topic-list">
+            <li>同一路口 72 分钟：一次安静的影像实验</li>
+            <li>早餐铺的第一锅：跟拍摊主的三小时</li>
+            <li>地铁首班车的声音地图，附收音参数</li>
+          </ul>
+        </div>
+      </article>
+      <article class="dtb-topic">
+        <div class="dtb-topic-cover">
+          <img alt="专题企划「器材不是借口」的封面：深色背景上的相机轮廓与彩色参数标签" src="data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 840 360'%3E%3Crect width='840' height='360' fill='%232a3350'/%3E%3Crect x='240' y='110' width='360' height='200' rx='24' fill='none' stroke='%23ffd23f' stroke-width='8'/%3E%3Ccircle cx='420' cy='210' r='64' fill='none' stroke='%23ff5a3c' stroke-width='10'/%3E%3Crect x='290' y='88' width='110' height='34' rx='10' fill='%23ffd23f'/%3E%3Crect x='120' y='250' width='90' height='34' rx='10' fill='%2312b886'/%3E%3Crect x='640' y='250' width='90' height='34' rx='10' fill='%232f4bd8'/%3E%3Crect x='120' y='80' width='70' height='26' rx='8' fill='%23ff5a3c'/%3E%3Crect x='660' y='80' width='70' height='26' rx='8' fill='%2312b886'/%3E%3C/svg%3E">
+          <span class="dtb-topic-status">已完结 · 共 6 期</span>
+        </div>
+        <div class="dtb-topic-body">
+          <h3>专题｜器材不是借口：低预算影像实验</h3>
+          <p>记录那些用地摊设备完成主题赛并进入榜单的作品，拆解它们在光线、构图与声音上的取舍。</p>
+          <ul class="dtb-topic-list">
+            <li>30 元台灯与一张 A4 纸的补光方案</li>
+            <li>手机外接麦克风值不值得买：三组盲测</li>
+            <li>把 500 元相机用到极限的六个场景</li>
+          </ul>
+        </div>
+      </article>
+      <article class="dtb-topic">
+        <div class="dtb-topic-cover">
+          <img alt="专题企划「幕后的人」的封面：紫色调的工作台与录音器材剪影" src="data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 840 360'%3E%3Crect width='840' height='360' fill='%23efe6fb'/%3E%3Crect x='60' y='200' width='720' height='120' rx='18' fill='%237a5ea8'/%3E%3Crect x='140' y='90' width='200' height='110' rx='14' fill='%233f2f5e'/%3E%3Crect x='380' y='120' width='90' height='80' rx='40' fill='%23ffb703'/%3E%3Crect x='510' y='90' width='180' height='110' rx='14' fill='%235d6784'/%3E%3Cpath d='M180 250l40-40 40 40 40-40 40 40' stroke='%23ffd23f' stroke-width='9' fill='none' stroke-linecap='round'/%3E%3Crect x='540' y='240' width='160' height='12' rx='6' fill='%23fff' opacity='0.6'/%3E%3C/svg%3E">
+          <span class="dtb-topic-status">更新中 · 已上线 4 期</span>
+        </div>
+        <div class="dtb-topic-body">
+          <h3>专题｜幕后的人：剪辑师、收音师与他们的深夜</h3>
+          <p>把镜头转向镜头后面的人，记录一场每日主题赛从提交到上线之间，被忽略的协作细节。</p>
+          <ul class="dtb-topic-list">
+            <li>凌晨两点还在调色的人：一位剪辑师的日常</li>
+            <li>收音师的包里有什么：现场声音急救清单</li>
+            <li>评审会开到深夜：一次真实的打分讨论记录</li>
+          </ul>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <!-- ===== 创作者矩阵 ===== -->
+  <section class="dtb-section" id="dtb-author">
+    <div class="dtb-section-head">
+      <span class="dtb-kicker">Creators</span>
+      <h2>创作者矩阵：让社区自己长出内容</h2>
+      <p>以下六位是近三个月在每日主题在线大赛中持续输出的创作者，覆盖美食烹饪、城市探索、教程干货、人物访谈、深度测评与治愈影像六个方向。</p>
+    </div>
+    <div class="dtb-author-grid">
+      <article class="dtb-author">
+        <div class="dtb-avatar" style="background:linear-gradient(135deg,#ff5a3c,#ffb703)">阿</div>
+        <div>
+          <h3>阿燎 <span>签约创作者</span></h3>
+          <p class="dtb-author-field">美食烹饪 · 深夜厨房</p>
+          <p>擅长用极简设备拍出有烟火气的厨房日常，连续 23 期参与主题赛，主张「先拍下来，再谈精致」。她的作品常被用作新手参考，评论区里最多的一句话是「原来这样也能拍」。</p>
+          <div class="dtb-author-stats"><span>作品 <b>86</b></span><span>粉丝 <b>12.4万</b></span><span>上榜 <b>31</b> 次</span></div>
+          <button class="dtb-author-more" type="button" data-dtb-open="author" data-dtb-name="阿燎" data-dtb-field="美食烹饪 · 深夜厨房">了解更多</button>
+        </div>
+      </article>
+      <article class="dtb-author">
+        <div class="dtb-avatar" style="background:linear-gradient(135deg,#2f4bd8,#12b886)">晨</div>
+        <div>
+          <h3>晨光档案 <span>城市记录者</span></h3>
+          <p class="dtb-author-field">城市探索 · 在地文化</p>
+          <p>以固定机位与长镜头记录城市细节，作品节奏克制，极少使用配乐，更愿意保留环境原声。曾用一条三分钟短片记录同一路口从空旷到繁忙的全过程，被社区称为「最安静的爆料」。</p>
+          <div class="dtb-author-stats"><span>作品 <b>54</b></span><span>粉丝 <b>9.8万</b></span><span>上榜 <b>19</b> 次</span></div>
+          <button class="dtb-author-more" type="button" data-dtb-open="author" data-dtb-name="晨光档案" data-dtb-field="城市探索 · 在地文化">了解更多</button>
+        </div>
+      </article>
+      <article class="dtb-author">
+        <div class="dtb-avatar" style="background:linear-gradient(135deg,#5d6784,#161b2e)">剪</div>
+        <div>
+          <h3>剪辑小满 <span>教程作者</span></h3>
+          <p class="dtb-author-field">教程干货 · 创作幕后</p>
+          <p>专注把复杂的剪辑流程拆成可执行的小步骤，擅长用十分钟讲清一个完整流程。她整理的参赛模板被下载超过两万次，是新人报名前最常被推荐的内容之一。</p>
+          <div class="dtb-author-stats"><span>作品 <b>112</b></span><span>粉丝 <b>15.6万</b></span><span>上榜 <b>27</b> 次</span></div>
+          <button class="dtb-author-more" type="button" data-dtb-open="author" data-dtb-name="剪辑小满" data-dtb-field="教程干货 · 创作幕后">了解更多</button>
+        </div>
+      </article>
+      <article class="dtb-author">
+        <div class="dtb-avatar" style="background:linear-gradient(135deg,#7a5ea8,#ff5a3c)">观</div>
+        <div>
+          <h3>赛事观察室 <span>官方合作观察</span></h3>
+          <p class="dtb-author-field">人物访谈 · 行业观察</p>
+          <p>以访谈与复盘为主，持续追踪每期主题赛的评审逻辑与社区反馈，擅长把散落的评论整理成有结构的行业观察。其「赛后复盘」系列是许多创作者每期必看的内容。</p>
+          <div class="dtb-author-stats"><span>作品 <b>68</b></span><span>粉丝 <b>8.2万</b></span><span>上榜 <b>16</b> 次</span></div>
+          <button class="dtb-author-more" type="button" data-dtb-open="author" data-dtb-name="赛事观察室" data-dtb-field="人物访谈 · 行业观察">了解更多</button>
+        </div>
+      </article>
+      <article class="dtb-author">
+        <div class="dtb-avatar" style="background:linear-gradient(135deg,#12b886,#ffd23f)">器</div>
+        <div>
+          <h3>器材自习室 <span>测评作者</span></h3>
+          <p class="dtb-author-field">深度测评 · 实用技巧</p>
+          <p>坚持用同一场景横评不同设备，测试条件与参数全部公开，结论常常反直觉但可复现。他反对「器材决定论」，更愿意讨论预算与题材的匹配关系。</p>
+          <div class="dtb-author-stats"><span>作品 <b>73</b></span><span>粉丝 <b>11.1万</b></span><span>上榜 <b>22</b> 次</span></div>
+          <button class="dtb-author-more" type="button" data-dtb-open="author" data-dtb-name="器材自习室" data-dtb-field="深度测评 · 实用技巧">了解更多</button>
+        </div>
+      </article>
+      <article class="dtb-author">
+        <div class="dtb-avatar" style="background:linear-gradient(135deg,#ffb703,#5d6784)">拾</div>
+        <div>
+          <h3>拾光不晚 <span>治愈影像</span></h3>
+          <p class="dtb-author-field">治愈影像 · 日常记录</p>
+          <p>专注记录低强度、慢节奏的生活片段，作品多以自然光与白噪音为主，几乎没有台词。她说自己拍的不是风景，而是「一个人安静待着的证据」，评论区常被当作深夜树洞。</p>
+          <div class="dtb-author-stats"><span>作品 <b>41</b></span><span>粉丝 <b>6.9万</b></span><span>上榜 <b>12</b> 次</span></div>
+          <button class="dtb-author-more" type="button" data-dtb-open="author" data-dtb-name="拾光不晚" data-dtb-field="治愈影像 · 日常记录">了解更多</button>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <!-- ===== 时间线故事 ===== -->
+  <section class="dtb-section" id="dtb-story">
+    <div class="dtb-section-head">
+      <span class="dtb-kicker">Our Story</span>
+      <h2>品牌故事：从一次内部练习到每日主题赛</h2>
+      <p>品牌故事不写在奖杯上，写在每一期准点发布的主题里。以下时间线记录了每日主题在线大赛的几个关键节点。</p>
+    </div>
+    <div class="dtb-twocol">
+      <div class="dtb-timeline">
+        <div class="dtb-tl-item">
+          <span>2021 · 起点</span>
+          <h3>一次内部练习，意外留下第一批作品</h3>
+          <p>最初只是团队内部每周一题的拍摄练习，规则简单到只有一句「今天拍一件小事」。三个月后积累了 40 多条短片，我们意识到这套机制可以让更多创作者受益。</p>
+        </div>
+        <div class="dtb-tl-item">
+          <span>2022 · 开放</span>
+          <h3>向社区开放报名，第一期主题赛上线</h3>
+          <p>第一期公开主题为「窗」，收到 213 份投稿。评审维度在此时被固定下来，社区投票与专业评审的双轨制沿用至今。</p>
+        </div>
+        <div class="dtb-tl-item">
+          <span>2023 · 生态</span>
+          <h3>正版素材库与创作者档案上线</h3>
+          <p>为了让新人不再被设备和素材卡住，我们上线了免费的正版高清素材库，并为每位参赛者建立可追溯的作品档案。同一年，企业动态与投稿入口正式并入官网。</p>
+        </div>
+        <div class="dtb-tl-item">
+          <span>2025 · 深耕</span>
+          <h3>专题企划与榜单体系成型</h3>
+          <p>专题企划把零散的每日主题串成可连续观看的系列，热度榜、新人榜与口碑榜让不同阶段的创作者都有被看见的机会。社区规模在这一年稳定增长。</p>
+        </div>
+        <div class="dtb-tl-item">
+          <span>2026 · 现在</span>
+          <h3>第 118 期进行中，持续运营第 1268 天</h3>
+          <p>每日主题在线大赛仍在每天更新。我们依然相信，公开的规则、稳定的节奏与真实的反馈，是一个内容社区最值得信赖的三件东西。</p>
+        </div>
+      </div>
+      <div>
+        <img alt="品牌故事配图：从相机到屏幕的创作路径蓝色插画" src="data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 640 420'%3E%3Crect width='640' height='420' fill='%23eef1fb'/%3E%3Crect x='60' y='80' width='220' height='160' rx='18' fill='%232f4bd8'/%3E%3Ccircle cx='170' cy='160' r='46' fill='none' stroke='%23fff' stroke-width='10'/%3E%3Crect x='120' y='62' width='80' height='26' rx='8' fill='%23ffd23f'/%3E%3Crect x='330' y='120' width='250' height='150' rx='16' fill='%231b2340'/%3E%3Crect x='356' y='150' width='150' height='12' rx='6' fill='%23ff5a3c'/%3E%3Crect x='356' y='176' width='190' height='10' rx='5' fill='%23fff' opacity='0.55'/%3E%3Crect x='356' y='198' width='120' height='10' rx='5' fill='%23fff' opacity='0.35'/%3E%3Cpath d='M290 170h34' stroke='%2312b886' stroke-width='8' stroke-linecap='round'/%3E%3Cpath d='M314 158l18 12-18 12z' fill='%2312b886'/%3E%3Crect x='120' y='290' width='420' height='14' rx='7' fill='%235d6784' opacity='0.3'/%3E%3Crect x='120' y='320' width='300' height='12' rx='6' fill='%235d6784' opacity='0.2'/%3E%3C/svg%3E">
+        <div class="dtb-quote" style="background:#fff;border-radius:16px;padding:18px 20px;margin-top:16px;border:1px solid var(--dtb-line)">
+          <b style="color:var(--dtb-blue)">理念：</b>真实比精致重要，节奏比爆发重要，社区比流量重要。我们愿意把规则讲清楚，把作品留下来，把反馈还给创作者。
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== 评价（双列短评 + 评分摘要） ===== -->
+  <section class="dtb-section" id="dtb-comment">
+    <div class="dtb-section-head">
+      <span class="dtb-kicker">Community Voice</span>
+      <h2>口碑评价：来自创作者与观众的真实反馈</h2>
+      <p>社区口碑综合评分 9.7/10，以下评价来自不同阶段、不同题材的参与者，语气与关注点各不相同。</p>
+    </div>
+    <div class="dtb-comment-grid">
+      <div class="dtb-comment">
+        <div class="dtb-comment-head"><span class="dtb-comment-av" style="background:#ff5a3c">林</span><b>林野</b><small>参赛 14 期</small></div>
+        <p>第一次参赛的作品只有 800 播放，但评审给了很具体的反馈，说我的声音太糊。第二期我专门去学了收音，排名直接进了前 30。这种「知道为什么」的感觉很难得。</p>
+        <div class="dtb-stars">★★★★★</div>
+      </div>
+      <div class="dtb-comment">
+        <div class="dtb-comment-head"><span class="dtb-comment-av" style="background:#2f4bd8">M</span><b>Momo</b><small>观众 · 每日必看</small></div>
+        <p>我基本每天睡前刷两三条，最有意思的是看同一主题下完全不同的解法。有一次主题是「等待」，有人拍泡面，有人拍公交站，还有人拍猫，看完心情很平静。</p>
+        <div class="dtb-stars">★★★★★</div>
+      </div>
+      <div class="dtb-comment">
+        <div class="dtb-comment-head"><span class="dtb-comment-av" style="background:#12b886">阿</span><b>阿燎</b><small>签约创作者</small></div>
+        <p>建议新人不要一开始就追求设备，先用手机把一件小事拍完整。主题赛的门槛低，但评审看得出来你有没有认真。素材库里的音效真的很好用。</p>
+        <div class="dtb-stars">★★★★★</div>
+      </div>
+      <div class="dtb-comment">
+        <div class="dtb-comment-head"><span class="dtb-comment-av" style="background:#7a5ea8">C</span><b>陈可</b><small>品牌合作方</small></div>
+        <p>我们合作了两期定制主题，最直接的感受是数据透明。哪个方向互动高、哪种表达被收藏，后台都能看到，不用靠猜。内容质量也在线，正版素材这一点让人放心。</p>
+        <div class="dtb-stars">★★★★☆</div>
+      </div>
+      <div class="dtb-comment">
+        <div class="dtb-comment-head"><span class="dtb-comment-av" style="background:#ffb703">小</span><b>小满不急</b><small>参赛 31 期</small></div>
+        <p>连续参赛半年，最大的变化是拍摄前的准备工作变短了。因为每天都有主题，反而治好了我的完美主义。缺点是会上瘾，现在已经习惯睡前想明天的题。</p>
+        <div class="dtb-stars">★★★★★</div>
+      </div>
+      <div class="dtb-comment">
+        <div class="dtb-comment-head"><span class="dtb-comment-av" style="background:#5d6784">周</span><b>周末放映</b><small>影迷 · 普通用户</small></div>
+        <p>页面有点信息量，但胜在清楚。公告条每天更新主题，点进去就能看当期作品，不用注册也能浏览。希望以后能加一个按评分排序的入口。</p>
+        <div class="dtb-stars">★★★★☆</div>
+      </div>
+      <div class="dtb-comment">
+        <div class="dtb-comment-head"><span class="dtb-comment-av" style="background:#161b2e">N</span><b>Nana</b><small>新人榜第 6 期</small></div>
+        <p>新人榜真的有用。第一期就被推到榜单里，评论区多了很多鼓励，才有动力继续拍。评审复盘写得很实在，不是那种客套话，能看出是真的看过作品。</p>
+        <div class="dtb-stars">★★★★★</div>
+      </div>
+      <div class="dtb-comment">
+        <div class="dtb-comment-head"><span class="dtb-comment-av" style="background:#e8590c">老</span><b>老周拍片</b><small>参赛 40 期</small></div>
+        <p>作为一个四十多岁才开始学拍摄的人，这里没有年龄焦虑。大家只聊作品，不聊人设。唯一想吐槽的是热门作品更新太快，收藏夹已经快满了。</p>
+        <div class="dtb-stars">★★★★★</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== 企业动态 + 合作品牌 ===== -->
+  <section class="dtb-section" id="dtb-news">
+    <div class="dtb-section-head">
+      <span class="dtb-kicker">News & Partners</span>
+      <h2>企业动态与合作品牌</h2>
+      <p>官方发布的赛制调整、素材库更新与合作进展都会在这里同步，方便创作者与企业合作方第一时间了解变化。</p>
+    </div>
+    <div class="dtb-twocol">
+      <div class="dtb-news">
+        <div class="dtb-news-item">
+          <time>11-22</time>
+          <div>
+            <h3>第 118 期「深夜厨房」主题赛正式开放报名</h3>
+            <p>报名通道已开启，投稿截止 11 月 28 日 23:59，评审复盘会安排在下月 2 日，全程公开。</p>
+          </div>
+        </div>
+        <div class="dtb-news-item">
+          <time>11-19</time>
+          <div>
+            <h3>正版高清素材库新增 240 条音效与 18 套字幕模板</h3>
+            <p>本次更新重点补充厨房环境音与城市清晨的环境底噪，全部可免费下载用于主题赛作品。</p>
+          </div>
+        </div>
+        <div class="dtb-news-item">
+          <time>11-15</time>
+          <div>
+            <h3>第 117 期获奖名单公示，新人榜同步更新</h3>
+            <p>共 36 件作品进入榜单，其中 11 件来自首次参赛者，创下近半年新高。</p>
+          </div>
+        </div>
+        <div class="dtb-news-item">
+          <time>11-08</time>
+          <div>
+            <h3>与三家影像器材品牌达成年度内容合作</h3>
+            <p>合作将围绕低预算影像实验展开，后续会开放联合主题赛与设备试用名额。</p>
+          </div>
+        </div>
+      </div>
+      <div>
+        <div class="dtb-partner-grid">
+          <div class="dtb-partner"><span class="dtb-partner-logo" style="background:#2f4bd8">光</span><div><b>光屿影像</b><small>器材支持</small></div></div>
+          <div class="dtb-partner"><span class="dtb-partner-logo" style="background:#ff5a3c">声</span><div><b>声场实验室</b><small>音效合作</small></div></div>
+          <div class="dtb-partner"><span class="dtb-partner-logo" style="background:#12b886">城</span><div><b>城市记录计划</b><small>内容共建</small></div></div>
+          <div class="dtb-partner"><span class="dtb-partner-logo" style="background:#7a5ea8">剪</span><div><b>剪辑工坊</b><small>教程联合出品</small></div></div>
+        </div>
+        <div class="dtb-quote" style="background:#fff;border-radius:16px;padding:18px 20px;margin-top:14px;border:1px solid var(--dtb-line)">
+          <b style="color:var(--dtb-accent)">合作说明：</b>所有定制主题均标注「品牌合作」，评审标准与常规期一致，不因合作影响榜单公正性。这也是我们对社区最基础的承诺。
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== 创作灵感 ===== -->
+  <section class="dtb-section" id="dtb-inspire">
+    <div class="dtb-inspire">
+      <div>
+        <span class="dtb-kicker" style="color:#ffd23f">Creative Sparks</span>
+        <h2>创作灵感：明天拍什么，这里给三个方向</h2>
+        <p>灵感不是等来的，是从限制里长出来的。以下三条方向来自近期评审复盘与高互动作品的共同特征，适合用来打破选题僵局。它们不是标准答案，只是三条可以立刻开拍的路。</p>
+        <div class="dtb-hero-actions" style="margin-top:18px">
+          <button class="dtb-btn dtb-btn-primary" type="button" data-dtb-open="submit">报名下一期</button>
+          <button class="dtb-btn dtb-btn-ghost" type="button" data-dtb-copy>复制本页链接</button>
+        </div>
+      </div>
+      <ul class="dtb-inspire-tips">
+        <li><b>01</b><span>给主题加一个时间限制：比如「只拍十分钟内发生的事」，限制会自然带来结构。</span></li>
+        <li><b>02</b><span>先收音再开机：用手机录两分钟环境声，再决定画面要拍什么，顺序反过来往往更真实。</span></li>
+        <li><b>03</b><span>把镜头交给别人：让家人或朋友拍你，第一人称的笨拙感常常比精致构图更有说服力。</span></li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ===== FAQ ===== -->
+  <section class="dtb-section" id="dtb-faq">
+    <div class="dtb-section-head">
+      <span class="dtb-kicker">Help Center</span>
+      <h2>常见问题：报名、投稿与评审</h2>
+      <p>如果你第一次参与每日主题在线大赛，下面这些问题大概率会遇到。仍无法解决时，可通过页脚的投稿与反馈入口联系我们。</p>
+    </div>
+    <div class="dtb-faq">
+      <details>
+        <summary>每日主题在线大赛是免费参加的吗？</summary>
+        <p>是。所有公开主题赛均免费报名，不需要购买任何设备或课程。正版高清素材库也对注册用户免费开放，下载后仅限用于本平台主题赛作品。</p>
+      </details>
+      <details>
+        <summary>我只有手机，可以参加吗？</summary>
+        <p>可以，而且手机作品在榜单中占比不低。评审更关注主题切合度与真实感，不强制要求专业设备。建议外接一个几十元的麦克风，声音质量的提升会非常明显。</p>
+      </details>
+      <details>
+        <summary>作品时长有要求吗？</summary>
+        <p>通常要求在 30 秒到 5 分钟之间，具体以当期公告为准。我们更建议把一件事讲完整，而不是为了凑时长加入无关内容。</p>
+      </details>
+      <details>
+        <summary>社区投票会被刷票影响吗？</summary>
+        <p>系统会对异常投票行为做识别与剔除，最终榜单以「社区投票 40% + 专业评审 60%」合成。若发现异常，官方会在企业动态中说明处理结果。</p>
+      </details>
+      <details>
+        <summary>投稿后还能修改作品吗？</summary>
+        <p>在截止时间之前可以撤回并重新上传，每个主题最多允许三次修改。截止后作品进入评审流程，不再接受替换。</p>
+      </details>
+      <details>
+        <summary>企业可以合作定制主题吗？</summary>
+        <p>可以。合作主题会明确标注「品牌合作」，评审标准与常规期一致。我们更倾向于与尊重创作者、愿意长期投入的品牌合作，具体可查看合作品牌模块。</p>
+      </details>
+      <details>
+        <summary>获奖作品的版权归谁？</summary>
+        <p>作品版权归创作者所有。平台仅在赛事展示、复盘与官方宣传范围内获得非独占使用权，并会标注作者信息。任何商业用途都会另行取得授权。</p>
+      </details>
+    </div>
+  </section>
+
+</main>
+
+<!-- ===== 页脚 ===== -->
+<footer class="dtb-footer">
+  <div class="dtb-wrap">
+    <div class="dtb-footer-grid">
+      <div>
+        <div class="dtb-brand" style="margin-bottom:12px">
+          <div class="dtb-brand-mark" aria-hidden="true">每</div>
+          <div class="dtb-brand-text">
+            <b>每日主题在线大赛</b>
+            <small style="color:#8b96ba">DAILY THEME ONLINE CUP</small>
+          </div>
+        </div>
+        <p>每日主题在线大赛官方网站。我们持续运营一个以每日主题为核心的原创视频赛事社区，提供正版高清素材、公开评审维度与可追溯的作品档案，让创作者被真实看见。</p>
+        <div class="dtb-socials">
+          <button type="button" data-dtb-open="share">分享</button>
+          <button type="button" data-dtb-open="feedback">反馈</button>
+          <button type="button" data-dtb-open="submit">投稿</button>
+        </div>
+      </div>
+      <div>
+        <h3>参与赛事</h3>
+        <ul>
+          <li><a href="#dtb-focus">今日焦点爆料</a></li>
+          <li><a href="#dtb-topic">专题企划</a></li>
+          <li><a href="#dtb-author">创作者矩阵</a></li>
+          <li><a href="#dtb-faq">报名与投稿帮助</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3>了解品牌</h3>
+        <ul>
+          <li><a href="#dtb-analyse">大赛解析</a></li>
+          <li><a href="#dtb-story">品牌故事</a></li>
+          <li><a href="#dtb-news">企业动态</a></li>
+          <li><a href="#dtb-comment">社区口碑</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3>联系与声明</h3>
+        <ul>
+          <li>合作邮箱：brand@dailythemecup.cn</li>
+          <li>投稿咨询：工作日 10:00–19:00</li>
+          <li>内容均为原创或已获授权</li>
+          <li>持续运营中 · 用户至上</li>
+        </ul>
+      </div>
+    </div>
+    <div class="dtb-footer-bottom">
+      <span>© 2021–2026 每日主题在线大赛 版权所有 · 官方网站 · 持续运营中</span>
+      <span>备案号：沪ICP备2021000000号-8 · 广播电视节目制作经营许可证（沪）字第 0000 号</span>
+    </div>
+  </div>
+</footer>
+
+<!-- ===== 浮动控件 ===== -->
+<div class="dtb-toast" id="dtb-toast" role="status" aria-live="polite"></div>
+<button class="dtb-backtop" id="dtb-backtop" type="button" aria-label="回到顶部">↑</button>
+
+<!-- ===== 弹窗 ===== -->
+<div class="dtb-modal" id="dtb-modal" role="dialog" aria-modal="true" aria-labelledby="dtb-modal-title">
+  <div class="dtb-modal-box">
+    <button class="dtb-modal-close" type="button" id="dtb-modal-close" aria-label="关闭">✕</button>
+    <h3 id="dtb-modal-title">投稿入口</h3>
+    <p id="dtb-modal-desc">填写你的作品信息，我们会通过邮件与你确认参赛细节。所有投稿作品需为原创，且未在其他赛事中重复获奖。</p>
+    <textarea id="dtb-modal-text" placeholder="作品标题 / 主题期数 / 一句话简介"></textarea>
+    <div class="dtb-modal-actions">
+      <button class="dtb-btn dtb-btn-ghost" type="button" id="dtb-modal-cancel">再想想</button>
+      <button class="dtb-btn dtb-btn-primary" type="button" id="dtb-modal-ok">提交</button>
+    </div>
+  </div>
+</div>
+
+<script>
+(function(){
+  "use strict";
+  var toast = document.getElementById('dtb-toast');
+  var toastTimer = null;
+  function showToast(msg){
+    toast.textContent = msg;
+    toast.classList.add('is-on');
+    clearTimeout(toastTimer);
+    toastTimer = setTimeout(function(){ toast.classList.remove('is-on'); }, 2200);
+  }
+
+  /* 移动端导航折叠 */
+  var burger = document.getElementById('dtb-burger');
+  var mobileNav = document.getElementById('dtb-mobile-nav');
+  burger.addEventListener('click', function(){
+    var open = mobileNav.classList.toggle('is-open');
+    burger.setAttribute('aria-expanded', open ? 'true' : 'false');
+  });
+  mobileNav.addEventListener('click', function(e){
+    if(e.target.tagName === 'A'){
+      mobileNav.classList.remove('is-open');
+      burger.setAttribute('aria-expanded','false');
+    }
+  });
+
+  /* 搜索反馈 */
+  var input = document.getElementById('dtb-search-input');
+  var btn = document.getElementById('dtb-search-btn');
+  var feedback = document.getElementById('dtb-search-feedback');
+  var fbTimer = null;
+  function doSearch(){
+    var q = input.value.trim();
+    if(!q){
+      feedback.textContent = '试试搜索「深夜厨房」「评审维度」或某位创作者昵称';
+      feedback.classList.add('is-on');
+    } else {
+      feedback.textContent = '已为你匹配「' + q + '」相关主题赛与爆料，共找到 ' + (q.length * 7 + 3) + ' 条结果';
+      feedback.classList.add('is-on');
+    }
+    clearTimeout(fbTimer);
+    fbTimer = setTimeout(function(){ feedback.classList.remove('is-on'); }, 3200);
+  }
+  btn.addEventListener('click', doSearch);
+  input.addEventListener('keydown', function(e){ if(e.key === 'Enter'){ e.preventDefault(); doSearch(); } });
+
+  /* 点赞 / 收藏 */
+  document.addEventListener('click', function(e){
+    var likeBtn = e.target.closest('[data-dtb-like]');
+    if(likeBtn){
+      var liked = likeBtn.classList.toggle('is-liked');
+      likeBtn.textContent = liked ? '♥ 已赞' : '♡ 点赞';
+      showToast(liked ? '已为这条内容点赞' : '已取消点赞');
+      return;
+    }
+    var saveBtn = e.target.closest('[data-dtb-save]');
+    if(saveBtn){
+      var saved = saveBtn.classList.toggle('is-saved');
+      saveBtn.textContent = saved ? '★ 已收藏' : '☆ 收藏';
+      showToast(saved ? '已加入收藏夹' : '已移出收藏夹');
+      return;
+    }
+    var copyBtn = e.target.closest('[data-dtb-copy]');
+    if(copyBtn){
+      var text = '每日主题在线大赛爆料 · 官方网站';
+      if(navigator.clipboard && navigator.clipboard.writeText){
+        navigator.clipboard.writeText(text).then(function(){ showToast('链接已复制到剪贴板'); }, function(){ showToast('复制失败，请手动复制地址栏链接'); });
+      } else {
+        showToast('链接已复制到剪贴板');
+      }
+      return;
+    }
+  });
+
+  /* 弹窗 */
+  var modal = document.getElementById('dtb-modal');
+  var modalTitle = document.getElementById('dtb-modal-title');
+  var modalDesc = document.getElementById('dtb-modal-desc');
+  var modalText = document.getElementById('dtb-modal-text');
+  var modalConfig = {
+    submit: { t:'投稿入口', d:'填写你的作品信息，我们会通过邮件与你确认参赛细节。所有投稿作品需为原创，且未在其他赛事中重复获奖。', p:'作品标题 / 主题期数 / 一句话简介' },
+    share: { t:'分享这条爆料', d:'把每日主题在线大赛的今日焦点分享给朋友：微信、微博、QQ 均可。复制链接后粘贴即可。', p:'可在此填写想对朋友说的话' },
+    feedback: { t:'反馈与举报', d:'如果发现作品存在抄袭、刷票或侵权问题，请描述具体情况。我们会在三个工作日内完成核查并公示结果。', p:'请描述你遇到的问题' },
+    author: { t:'创作者介绍', d:'正在加载创作者档案……', p:'想对创作者说的话（选填）' }
+  };
+  var currentType = 'submit';
+  function openModal(type, extra){
+    currentType = type;
+    var cfg = modalConfig[type] || modalConfig.submit;
+    modalTitle.textContent = (type === 'author' && extra && extra.name) ? (extra.name + ' · 创作者档案') : cfg.t;
+    modalDesc.textContent = (type === 'author' && extra && extra.field)
+      ? ('擅长方向：' + extra.field + '。该创作者持续参与每日主题在线大赛，作品档案可在作者矩阵中查看。')
+      : cfg.d;
+    modalText.placeholder = cfg.p;
+    modalText.value = '';
+    modal.classList.add('is-on');
+    setTimeout(function(){ modalText.focus(); }, 60);
+  }
+  function closeModal(){ modal.classList.remove('is-on'); }
+
+  document.addEventListener('click', function(e){
+    var trigger = e.target.closest('[data-dtb-open]');
+    if(trigger){
+      var type = trigger.getAttribute('data-dtb-open');
+      var extra = { name: trigger.getAttribute('data-dtb-name'), field: trigger.getAttribute('data-dtb-field') };
+      openModal(type, extra);
+    }
+  });
+  document.getElementById('dtb-modal-close').addEventListener('click', closeModal);
+  document.getElementById('dtb-modal-cancel').addEventListener('click', closeModal);
+  document.getElementById('dtb-modal-ok').addEventListener('click', function(){
+    if(currentType === 'share'){
+      closeModal();
+      showToast('分享已生成，可粘贴到微信 / 微博 / QQ');
+      return;
+    }
+    if(!modalText.value.trim()){
+      showToast('请先填写内容再提交');
+      return;
+    }
+    closeModal();
+    showToast(currentType === 'feedback' ? '反馈已收到，我们会尽快核查' : '提交成功，我们会通过邮件与你确认');
+  });
+  modal.addEventListener('click', function(e){ if(e.target === modal){ closeModal(); } });
+  document.addEventListener('keydown', function(e){ if(e.key === 'Escape'){ closeModal(); } });
+
+  /* 回到顶部 */
+  var backtop = document.getElementById('dtb-backtop');
+  window.addEventListener('scroll', function(){
+    if(window.scrollY > 520){ backtop.classList.add('is-on'); }
+    else { backtop.classList.remove('is-on'); }
+  }, { passive: true });
+  backtop.addEventListener('click', function(){
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
+})();
+</script>
+</body>
+  </html>
